@@ -16,12 +16,12 @@ Column {
     spacing: Appearance.spacing.large
 
     SessionButton {
-        id: logout
+        id: shutdown
 
-        icon: "logout"
-        command: Config.session.commands.logout
+        icon: "power_settings_new"
+        command: Config.session.commands.shutdown
 
-        KeyNavigation.down: shutdown
+        KeyNavigation.down: reboot
 
         Component.onCompleted: forceActiveFocus()
 
@@ -36,12 +36,12 @@ Column {
     }
 
     SessionButton {
-        id: shutdown
+        id: reboot
 
-        icon: "power_settings_new"
-        command: Config.session.commands.shutdown
+        icon: "cached"
+        command: Config.session.commands.reboot
 
-        KeyNavigation.up: logout
+        KeyNavigation.up: shutdown
         KeyNavigation.down: hibernate
     }
 
@@ -63,15 +63,15 @@ Column {
         icon: "downloading"
         command: Config.session.commands.hibernate
 
-        KeyNavigation.up: shutdown
-        KeyNavigation.down: reboot
+        KeyNavigation.up: reboot
+        KeyNavigation.down: windows
     }
 
     SessionButton {
-        id: reboot
+        id: windows
 
-        icon: "cached"
-        command: Config.session.commands.reboot
+        icon: "window"
+        command: Config.session.commands.windows
 
         KeyNavigation.up: hibernate
     }

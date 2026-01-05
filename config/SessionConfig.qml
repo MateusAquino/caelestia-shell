@@ -1,4 +1,5 @@
 import Quickshell.Io
+import qs.utils
 
 JsonObject {
     property bool enabled: true
@@ -13,6 +14,7 @@ JsonObject {
         property list<string> shutdown: ["systemctl", "poweroff"]
         property list<string> hibernate: ["systemctl", "hibernate"]
         property list<string> reboot: ["systemctl", "reboot"]
+        property list<string> windows: ["fish", `${Paths.home}/.config/hypr/scripts/reboot-windows.fish`]
     }
 
     component Sizes: JsonObject {
