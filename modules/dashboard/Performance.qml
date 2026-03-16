@@ -109,7 +109,7 @@ Item {
                     secondaryLabel: qsTr("Temp")
                     usage: SystemUsage.gpuPerc
                     temperature: SystemUsage.gpuTemp
-                    accentColor: Colours.palette.m3secondary
+                    accentColor: Colours.palette.m3error
                 }
             }
 

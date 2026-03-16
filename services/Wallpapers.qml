@@ -38,7 +38,11 @@ Searcher {
             Colours.showPreview = false;
     }
 
-    list: wallpapers.entries
+    list: wallpapers.entries.reduce((w, entry) => {
+        if (!w.some(e => e.path === entry.path))
+            w.push(entry);
+        return w;
+    }, [])
     key: "relativePath"
     useFuzzy: Config.launcher.useFuzzy.wallpapers
     extraOpts: useFuzzy ? ({}) : ({

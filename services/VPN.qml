@@ -58,6 +58,12 @@ Singleton {
                 interface: "wt0",
                 displayName: "NetBird"
             },
+            "nordvpn": {
+                connectCmd: ["nordvpn", "connect"],
+                disconnectCmd: ["nordvpn", "disconnect"],
+                interface: "nordlynx",
+                displayName: "NordVPN"
+            },
             "tailscale": {
                 connectCmd: ["tailscale", "up"],
                 disconnectCmd: ["tailscale", "down"],

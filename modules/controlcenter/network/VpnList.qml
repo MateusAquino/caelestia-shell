@@ -520,6 +520,27 @@ ColumnLayout {
 
                 TextButton {
                     Layout.fillWidth: true
+                    text: qsTr("NordVPN")
+                    inactiveColour: Colours.tPalette.m3surfaceContainerHigh
+                    inactiveOnColour: Colours.palette.m3onSurface
+                    onClicked: {
+                        const providers = [];
+                        for (let i = 0; i < Config.utilities.vpn.provider.length; i++) {
+                            providers.push(Config.utilities.vpn.provider[i]);
+                        }
+                        providers.push({
+                            name: "nordvpn",
+                            displayName: "NordVPN",
+                            interface: "nordlynx"
+                        });
+                        Config.utilities.vpn.provider = providers;
+                        Config.save();
+                        vpnDialog.closeWithAnimation();
+                    }
+                }
+
+                TextButton {
+                    Layout.fillWidth: true
                     text: qsTr("WireGuard (Custom)")
                     inactiveColour: Colours.tPalette.m3surfaceContainerHigh
                     inactiveOnColour: Colours.palette.m3onSurface

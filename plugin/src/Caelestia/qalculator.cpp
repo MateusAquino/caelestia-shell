@@ -8,7 +8,7 @@ Qalculator::Qalculator(QObject* parent)
     : QObject(parent) {
     if (!CALCULATOR) {
         new Calculator();
-        CALCULATOR->loadExchangeRates();
+        // CALCULATOR->loadExchangeRates();
         CALCULATOR->loadGlobalDefinitions();
         CALCULATOR->loadLocalDefinitions();
     }

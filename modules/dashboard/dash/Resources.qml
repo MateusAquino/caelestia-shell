@@ -26,13 +26,19 @@ Row {
     Resource {
         icon: "memory_alt"
         value: SystemUsage.memPerc
-        colour: Colours.palette.m3secondary
+        colour: Colours.palette.m3tertiary
     }
 
     Resource {
         icon: "hard_disk"
         value: SystemUsage.storagePerc
-        colour: Colours.palette.m3tertiary
+        colour: Colours.palette.m3secondary
+    }
+
+    Resource {
+        icon: "desktop_windows"
+        value: SystemUsage.gpuPerc
+        colour: Colours.palette.m3error
     }
 
     component Resource: Item {
